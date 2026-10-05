@@ -62,6 +62,12 @@
       font-size: 14px;
       margin-bottom: 32px;
     }
+    .legal-nav {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .legal-nav span { margin: 0 6px; }
     hr {
       border: none;
       border-top: 1px solid var(--rule);
@@ -90,13 +96,21 @@
 </head>
 <body>
   <main>
+    <nav class="legal-nav" aria-label="Legal pages">
+      <a href="./" aria-current="page">Privacy Policy</a>
+      <span aria-hidden="true">·</span>
+      <a href="terms/">Terms of Use</a>
+    </nav>
+
     <h1>Lumen Privacy Policy</h1>
-    <p class="updated">Last updated: April 15, 2026</p>
+    <p class="updated">Last updated: October 5, 2026</p>
 
     <p>
       Lumen is a privacy-first AI assistant for iPhone and iPad. This policy
       describes what data Lumen collects, what it doesn't, and what happens when
       you enable optional cloud providers. Plain English, no surprises.
+      Purchases and acceptable-use rules are in the
+      <a href="terms/">Terms of Use</a>.
     </p>
 
     <h2>Short version</h2>
@@ -107,6 +121,7 @@
       <li>Apple Intelligence, when available, runs on your device. Your prompts and replies do not leave your device on that path.</li>
       <li>Ollama Local, if you enable it, sends your messages to an Ollama server that you operate on your own network. The Lumen developer does not see or proxy that traffic.</li>
       <li>Ollama Cloud, if you enable it, sends your messages to <code>https://ollama.com</code> using an API key that you provide. The Lumen developer still does not see or proxy that traffic, but your messages do leave your device.</li>
+      <li>Lumen Pro is sold through Apple In-App Purchase. Apple processes the payment. The Lumen developer never sees your payment details.</li>
     </ul>
 
     <h2>What Lumen stores on your device</h2>
@@ -134,6 +149,36 @@
       <li>No crash reports or analytics sent to the developer or to any third party.</li>
       <li>No location, contacts, health data, financial data, or browsing history.</li>
     </ul>
+
+    <h2>Purchases and Lumen Pro</h2>
+    <p>
+      Lumen has a Free tier and an optional Lumen Pro tier. Payment is handled
+      entirely by Apple In-App Purchase (StoreKit). The Lumen developer does
+      not operate a payment backend, does not receive your card or Apple ID
+      credentials, and cannot see your payment details. Entitlement state is
+      read on-device through StoreKit.
+    </p>
+    <p>
+      At a high level:
+    </p>
+    <ul>
+      <li>
+        <strong>Free</strong> — Apple Intelligence chat on supported hardware,
+        voice input, conversation history and search, and one Ollama Local
+        server that you configure.
+      </li>
+      <li>
+        <strong>Pro</strong> — memories, document import, additional or cloud
+        Ollama providers, Home Screen widgets, and Siri/Shortcuts.
+      </li>
+    </ul>
+    <p>
+      Pro features that stay on your device remain on-device whether or not
+      you subscribe. If a subscription expires or Apple revokes a purchase,
+      those features lock again; local data is not uploaded to the developer.
+      Prices, renewal, cancellation, and Restore Purchases are described in
+      the <a href="terms/">Terms of Use</a>.
+    </p>
 
     <h2>AI providers and what they see</h2>
     <p>
@@ -219,8 +264,9 @@
     <footer>
       This page is hosted at
       <a href="https://eulicesl.github.io/lumen-legal/">https://eulicesl.github.io/lumen-legal/</a>
-      and reflects the behavior of Lumen version 1.0.0. The canonical source
-      of this document lives in the
+      and reflects the behavior of Lumen version 1.2.0. See also the
+      <a href="terms/">Terms of Use</a>. The canonical source of this
+      document lives in the
       <a href="https://github.com/eulicesl/lumen-legal">lumen-legal</a>
       repository.
     </footer>
